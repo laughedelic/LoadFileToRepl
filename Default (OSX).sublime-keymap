@@ -1,0 +1,4 @@
+[
+	{ "keys": ["super+r"], 		 "command": "load_file_to_repl"},
+	{ "keys": ["super+shift+r"], "command": "load_file_to_repl", "args": {"clear": true}}
+]
