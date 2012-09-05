@@ -16,8 +16,9 @@ At the moment it supports Haskell, Scala, Clojure, Ruby and Python REPLs load co
 	* optionally clears REPL before loading file;
 	* saves current file;
 	* and finally loads it into REPL, using according command.
+
 - Two hotkeys:
-	* `super+r` — just runs `load_file_to_repl` command;
+	* `super+r` — just runs `load_file_to_repl` command (mnemonic for **r** is **R**EPL or **r**eload);
 	* `super+shift+r` — same, but clears REPL before loading file.
 
 ## Installation
