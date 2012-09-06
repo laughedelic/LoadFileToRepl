@@ -23,9 +23,10 @@ At the moment it supports Haskell, Scala, Clojure, Ruby and Python REPLs load co
 
 ## Installation
 
-I recommend you to use [Sublime Package Control](http://wbond.net/sublime_packages/package_control).
-* Install [SublimeREPL](http://github.com/wuub/SublimeREPL) plugin;
-* Add this repo as a new channel to Package Control and install this package.
+I recommend you to use [Sublime Package Control](http://wbond.net/sublime_packages/package_control). It is very easy and convenient. See it's [usage](http://wbond.net/sublime_packages/package_control/usage) page. Just use command pallete (`super+shift+p`):
+* Install package: SublimeREPL;
+* Add Repository: `https://github.com/laughedelic/LoadFileToRepl/`;
+* Install package: LoadFileToRepl;
 
 ## TODO
 
