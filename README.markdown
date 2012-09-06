@@ -8,18 +8,22 @@ At the moment it supports Haskell, Scala, Clojure, Ruby and Python REPLs load co
 
 (Honestly, it was tested only with Haskell and Scala REPLs, so tell me please if it works fine with others).
 
-## Features (or just how it works)
+## Content
 
-- Command `load_file_to_repl`
-	* reveals REPL view or opens a new one according to the type of current file;
-	* always places REPL in another layout group (to see results simultaneously with code);
-	* optionally clears REPL before loading file;
-	* saves current file;
-	* and finally loads it into REPL, using according command.
+### Command `load_file_to_repl`
 
-- Two hotkeys:
-	* `super+r` — just runs `load_file_to_repl` command (mnemonic for **r** is **R**EPL or **r**eload);
-	* `super+shift+r` — same, but clears REPL before loading file.
+* reveals REPL view or opens a new one according to the type of current file;
+* always places REPL in another layout group (to see results simultaneously with code);
+* optionally clears REPL before loading file;
+* saves current file;
+* and finally loads it into REPL, using according command.
+
+### Two hotkeys:
+
+* `cmd+r` — just runs `load_file_to_repl` command (mnemonic for **r** is **R**EPL or **r**eload);
+* `cmd+shift+r` — same, but clears REPL before loading file.
+
+(On Windows and Linux there is `ctrl` istead of `cmd`)
 
 ## Installation
 
