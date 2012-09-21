@@ -1,8 +1,9 @@
-import sublimerepl
 import sublime, sublime_plugin
 
 class LoadFileToReplCommand(sublime_plugin.TextCommand):
 	def run(self, edit, clear=False):
+		import sublimerepl
+
 		filename = self.view.file_name()
 		filetype = self.view.scope_name(0).split(" ")[0].split(".")[1]
 
