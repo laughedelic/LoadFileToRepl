@@ -1,7 +1,7 @@
 import sublime, sublime_plugin
 
 class LoadFileToReplCommand(sublime_plugin.TextCommand):
-	def run(self, edit, clear=False):
+	def run(self, edit, clear=False, save_focus=True):
 		import sublimerepl
 
 		filename = self.view.file_name()
@@ -36,8 +36,9 @@ class LoadFileToReplCommand(sublime_plugin.TextCommand):
 		if clear:
 			repl_view.run_command("repl_clear")
 
-		# focus back on source file
-		self.view.window().focus_view(source_view)
+		# focus back on source file if needed
+		if save_focus:
+			self.view.window().focus_view(source_view)
 
 		formats = {
 			  'haskell' :  ':load "%s"' 
