@@ -6,7 +6,7 @@ This is a companion plugin to [SublimeREPL](http://github.com/wuub/SublimeREPL) 
 
 At the moment it supports Haskell, Scala, Clojure, Ruby and Python REPLs load commands, but it's easy to extend this list. Welcome to suggest yours!
 
-(Honestly, it was tested only with Haskell and Scala REPLs, so tell me please if it works fine with others).
+(Honestly, it was tested only with Haskell and Scala REPLs only on Mac OS X, so tell me please if it works good or bad with others).
 
 ## Content
 
@@ -16,12 +16,31 @@ At the moment it supports Haskell, Scala, Clojure, Ruby and Python REPLs load co
 * always places REPL in another layout group (to see results simultaneously with code);
 * optionally clears REPL before loading file;
 * saves current file;
-* and finally loads it into REPL, using according command.
+* and finally loads it into REPL, using according command;
+* optionally moves cursor to the REPL.
 
-### Two hotkeys:
+You can call it from command palette.
 
-* `cmd+r` — just runs `load_file_to_repl` command (mnemonic for **r** is **R**EPL or **r**eload);
-* `cmd+shift+r` — same, but clears REPL before loading file.
+### Options:
+
+* `clear` — if `true`, clears REPL before loading file (`false` by default);
+* `save_focus` — if `true`, saves focus on the sourse file, else moves cursor to REPL (`true` by default).
+
+You can use them in hotkeys:
+
+### Hotkeys:
+
+* `cmd+r` — runs `load_file_to_repl` command (mnemonic for **r** is **R**EPL or **r**eload) and moves cursor to it;
+
+```json
+	{ "keys": ["super+r"], 		 "command": "load_file_to_repl", "args": {"save_focus": false}}
+```
+
+* `cmd+shift+r` — same, but clears REPL before loading file and doesn't move cursor (saves focus on sourse).
+
+```json
+	{ "keys": ["super+shift+r"], "command": "load_file_to_repl", "args": {"clear": true}}
+```
 
 (On Windows and Linux there is `ctrl` istead of `cmd`)
 
