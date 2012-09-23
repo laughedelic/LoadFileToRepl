@@ -51,6 +51,8 @@ I recommend you to use [Sublime Package Control](http://wbond.net/sublime_packag
 * Add Repository: `https://github.com/laughedelic/LoadFileToRepl/`;
 * Install package: LoadFileToRepl;
 
+**Note**: if you use `master` branch of SublimeREPL (default is `resease`), then you can try `sublimerepl_master` branch of this plugin. Just change repository address on the second step: `https://github.com/laughedelic/LoadFileToRepl/tree/sublimerepl_master`.
+
 ## TODO
 
 * More flexibility — through options (e.g layout) and smaller commands;
