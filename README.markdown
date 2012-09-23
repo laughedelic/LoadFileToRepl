@@ -30,19 +30,19 @@ You can use them in hotkeys:
 
 ### Hotkeys:
 
-* `cmd+r` — runs `load_file_to_repl` command (mnemonic for **r** is **R**EPL or **r**eload) and moves cursor to it;
+* `⌘R` — runs `load_file_to_repl` command (mnemonic for **r** is **R**EPL or **r**eload) and moves cursor to it;
 
 ```json
 	{ "keys": ["super+r"], 		 "command": "load_file_to_repl", "args": {"save_focus": false}}
 ```
 
-* `cmd+shift+r` — same, but clears REPL before loading file and doesn't move cursor (saves focus on sourse).
+* `⌘⇧R` — same, but clears REPL before loading file and doesn't move cursor (saves focus on sourse).
 
 ```json
 	{ "keys": ["super+shift+r"], "command": "load_file_to_repl", "args": {"clear": true}}
 ```
 
-(On Windows and Linux there is `ctrl` istead of `cmd`)
+(On Windows and Linux there is `ctrl` istead of `⌘`)
 
 ## Installation
 
