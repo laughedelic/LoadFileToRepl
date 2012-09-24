@@ -1,7 +1,7 @@
 import sublime, sublime_plugin
 
 class LoadFileToReplCommand(sublime_plugin.TextCommand):
-	def run(self, edit, clear=False, save_focus=True):
+	def run(self, edit, clear=False, save_focus=True, split="vertically"):
 		import sublimerepl
 
 		filename = self.view.file_name()
@@ -10,13 +10,21 @@ class LoadFileToReplCommand(sublime_plugin.TextCommand):
 		source_view = self.view
 		source_group = source_view.window().active_group()
 
-		# if there is only one group change layout to 2 columns
+		# if there is only one group, add one more, according to the split option
 		if self.view.window().num_groups() == 1:
-			self.view.window().run_command("set_layout", {
-				"cols"  :  [0.0, 0.5, 1.0],            
-				"rows"  :  [0.0, 1.0],                 
-				"cells" :  [[0, 0, 1, 1], [1, 0, 2, 1]]
-				})
+			if split == "vertically":
+				self.view.window().run_command("set_layout", {
+					"cols"  : [0.0, 0.5, 1.0],
+					"rows"  : [0.0, 1.0],
+					"cells" : [[0, 0, 1, 1], [1, 0, 2, 1]]
+					})
+			elif split == "horizontally":
+				self.view.window().run_command("set_layout", {
+					"cols"  : [0.0, 1.0],
+					"rows"  : [0.0, 0.5, 1.0],
+					"cells" : [[0, 0, 1, 1], [0, 1, 1, 2]]
+					})
+			# else no any split
 		next_group = (source_group + 1) % self.view.window().num_groups()
 
 		if sublimerepl.find_repl(filetype) == None:
