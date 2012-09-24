@@ -1,4 +1,4 @@
 [
-	{ "keys": ["ctrl+r"], 		 "command": "load_file_to_repl"},
+	{ "keys": ["ctrl+r"], 		"command": "load_file_to_repl", "args": {"save_focus": false}},
 	{ "keys": ["ctrl+shift+r"], "command": "load_file_to_repl", "args": {"clear": true}}
 ]
