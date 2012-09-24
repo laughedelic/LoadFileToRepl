@@ -30,7 +30,7 @@ You can use them in hotkeys:
 
 ### Hotkeys:
 
-* `⌘R` — runs `load_file_to_repl` command (mnemonic for **r** is **R**EPL or **r**eload) and moves cursor to it;
+* `⌘R` — runs `load_file_to_repl` command (mnemonic for `R` is **R**EPL or **R**eload) and moves cursor to it;
 
 ```json
 	{ "keys": ["super+r"], 		 "command": "load_file_to_repl", "args": {"save_focus": false}}
@@ -47,11 +47,13 @@ You can use them in hotkeys:
 ## Installation
 
 I recommend you to use [Sublime Package Control](http://wbond.net/sublime_packages/package_control). It is very easy and convenient. See it's [usage](http://wbond.net/sublime_packages/package_control/usage) page. Just use command pallete (`super+shift+p`):
+
 * Install package: SublimeREPL;
 * Add Repository: `https://github.com/laughedelic/LoadFileToRepl/`;
-* Install package: LoadFileToRepl;
 
-**Note**: if you use `master` branch of SublimeREPL (default is `resease`), then you can try `sublimerepl_master` branch of this plugin. Just change repository address on the second step: `https://github.com/laughedelic/LoadFileToRepl/tree/sublimerepl_master`.
+  > **note**: if you use `master` branch of sublimerepl (default is `release`), try `sublimerepl_master` branch of this plugin: `https://github.com/laughedelic/loadfiletorepl/tree/sublimerepl_master`.
+
+* Install package: LoadFileToRepl;
 
 ## TODO
 
