@@ -13,7 +13,7 @@ At the moment it supports Haskell, Scala, Clojure, Ruby and Python REPLs load co
 ### Command `load_file_to_repl`
 
 * reveals REPL view or opens a new one according to the type of current file;
-* always places REPL in another layout group (to see results simultaneously with code);
+* optionally places REPL in another layout group (to see results simultaneously with code);
 * optionally clears REPL before loading file;
 * saves current file;
 * and finally loads it into REPL, using according command;
@@ -25,8 +25,11 @@ You can call it from command palette.
 
 * `clear` — if `true`, clears REPL before loading file (`false` by default);
 * `save_focus` — if `true`, saves focus on the sourse file, else moves cursor to REPL (`true` by default).
+* `split` —  if it has `"horizontally"` or `"vertically"` (default) value, it determines how window is splitted to show REPL in a new layout group. If it doesn't have one of these two values, or if window was already splitted, this option doesn't take effect — REPL is placed in a new tab or in the next layout group.
 
-You can use them in hotkeys:
+   > **Note**: if you want another splitting behavior or more flexibility, take a look at the [Origamy plugin](https://github.com/SublimeText/Origami/).
+
+You can use these options in hotkeys:
 
 ### Hotkeys:
 
