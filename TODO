@@ -1,0 +1,12 @@
+TODO:
+ ☐ Add settings with default values for command options
+ ☐ Check if SublimeREPL plugin is installed and try to install it through Package Control api automatically
+ ☐ Divide command to smaller pieces
+ ☐ Submit this plugin to Community channel
+ ☐ Add support for all SublimeREPL languages
+
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ An option to save focus on the current view or move it to the opened repl @done (24.09.2012 02:43)
+ ✔ An option, that determines how window will be splitted to open repl in a new view @done (25.09.2012 01:48)
