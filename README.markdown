@@ -53,13 +53,4 @@ I recommend you to use [Sublime Package Control](http://wbond.net/sublime_packag
 
 * Install package: SublimeREPL;
 * Add Repository: `https://github.com/laughedelic/LoadFileToRepl/`;
-
-  > **note**: if you use `master` branch of sublimerepl (default is `release`), try `sublimerepl_master` branch of this plugin: `https://github.com/laughedelic/loadfiletorepl/tree/sublimerepl_master`.
-
 * Install package: LoadFileToRepl;
-
-## TODO
-
-* More flexibility — through options (e.g layout) and smaller commands;
-* Add support for all SublimeREPL languages;
-* Submit this plugin to Community chanell.
