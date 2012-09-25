@@ -1,8 +1,13 @@
-import sublime, sublime_plugin
+import sublime
 
 class LoadFileToReplCommand(sublime_plugin.TextCommand):
 	def run(self, edit, clear=False, save_focus=True, split="vertically"):
-		import sublimerepl
+
+		# import is done inside of function, because this plugin 
+		# 	may load before SublimeREPL
+		# this is either for master or release branch or SublimeREPL
+		try: from sublimerepl import manager as sublimerepl
+		except ImportError: import sublimerepl
 
 		filename = self.view.file_name()
 		filetype = self.view.scope_name(0).split(" ")[0].split(".")[1]
