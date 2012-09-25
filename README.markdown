@@ -49,8 +49,8 @@ You can use these options in hotkeys:
 
 ## Installation
 
-I recommend you to use [Sublime Package Control](http://wbond.net/sublime_packages/package_control). It is very easy and convenient. See it's [usage](http://wbond.net/sublime_packages/package_control/usage) page. Just use command pallete (`super+shift+p`):
+I recommend you to use [Sublime Package Control](http://wbond.net/sublime_packages/package_control). It is very easy and convenient. See it's [usage](http://wbond.net/sublime_packages/package_control/usage) page for reference.
 
-* Install package: SublimeREPL;
-* Add Repository: `https://github.com/laughedelic/LoadFileToRepl/`;
-* Install package: LoadFileToRepl;
+* `⌘⇧P` ➤ `Package Control: Install package` ➤ `SublimeREPL`;
+* `⌘⇧P` ➤ `Package Control: Add Repository`, paste `https://github.com/laughedelic/LoadFileToRepl/`;
+* `⌘⇧P` ➤ `Package Control: Install package` ➤ `LoadFileToRepl`;
