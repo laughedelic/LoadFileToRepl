@@ -1,32 +1,48 @@
 import sublime, sublime_plugin
 
-def install_sublimerepl():
-	package_control = __import__("Package Control")
+def is_installed(package):
+	"""Checks if `package` is installed
+	"""
+	settings = sublime.load_settings("Package Control.sublime-settings")
+	installed_packages = settings.get("installed_packages", [])
+	return package in installed_packages
+
+def install(package):
+	"""Offers to install `package`, using Package Control api
+	"""
 	ok = sublime.ok_cancel_dialog(
-		"LoadFileToRepl requires installed SublimeREPL plugin. \n" +
-		"Do you want to install it automatically?", "Install")
-	if not ok: return
-	else: 
-		package_manager = package_control.PackageManager()
-		thread = package_control.PackageInstallerThread(package_manager, "SublimeREPL")
+			"LoadFileToRepl requires installed %s plugin. \n" % package +
+			"Do you want to install it automatically?",
+			"Install")
+	if ok:
+		PC = __import__("Package Control")
+		thread = PC.PackageInstallerThread(PC.PackageManager(), package)
 		thread.start()
-		package_control.ThreadProgress(thread, 
-			'Installing package SublimeREPL',
-			'Package SublimeREPL successfully installed')
-		return
+		PC.ThreadProgress(thread, 
+			'Installing package %s' % package,
+			'Package %s successfully installed' % package)
+
 
 class LoadFileToReplCommand(sublime_plugin.TextCommand):
 
 	def run(self, edit, clear=False, save_focus=True, split="vertically"):
+		# check depencies
+		if not is_installed("SublimeREPL"):
+			install("SublimeREPL")
+			return
 
 		# import is done inside of function, because this plugin 
 		# 	may be loaded before SublimeREPL
-		# this is either for master or release branch or SublimeREPL
+		# this is either for master  branch:
 		try: from sublimerepl import manager as repl_manager
-		except ImportError: 
+		except ImportError: # or for release branch of SublimeREPL:
 			try: import sublimerepl as repl_manager
-			except ImportError: # is SublimeREPL installed at all???
-				install_sublimerepl()
+			except ImportError: # something strange...
+				sublime.error_message(
+					 """Looks like SublimeREPL plugin is installed, 
+					 	but cannot be loaded. Try to restart Sublime Text 2. 
+					 	If it doesn't help, report a bug, please: \n
+						http://github.com/laughedelic/LoadFileToRepl/issues""")
 				return
 
 		filename = self.view.file_name()
@@ -62,13 +78,6 @@ class LoadFileToReplCommand(sublime_plugin.TextCommand):
 				"file" :  "config/" + filetype.title() + "/Main.sublime-menu"
 			})
 
-		# second check is for the case, when repl_manager was loaded, 
-		# but then SublimeREPL plugin was removed, so link is broken.
-		if repl_manager.find_repl(filetype) == None:
-			sublime.error_message(
-				"It seems, that SublimeREPL plugin is not loaded. " +
-				"Could you restart Sublime Text 2, please?")
-			return
 		# reveal repl view, move and clear it if needed
 		repl_view = repl_manager.find_repl(filetype)._view
 		self.view.window().focus_view(repl_view)
