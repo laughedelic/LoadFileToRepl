@@ -1,5 +1,5 @@
 TODO:
- ☐ Add settings with default values for command options
+ ✔ Add settings with default values for command options @done (27.09.2012 02:21)
  ☐ Divide command to smaller pieces
  ☐ Submit this plugin to Community channel
  ☐ Add support for all SublimeREPL languages
