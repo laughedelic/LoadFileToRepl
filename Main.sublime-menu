@@ -14,4 +14,93 @@
             ]
         }]
     }
+    ,
+    {
+        "id": "preferences",
+        "children":
+        [
+            {
+                "id": "package-settings",
+                "children":
+                [
+                    {
+                        "caption": "LoadFileToRepl",
+                        "children":
+                        [
+                            // README
+                            {
+                                "caption": "View README",
+                                "command": "open_file", "args": {"file": "${packages}/LoadFileToRepl/README.markdown"}
+                            },
+                            { "caption": "-" },
+
+                            // Settings
+                            {
+                                "caption": "Settings – Default",
+                                "command": "open_file", "args": {"file": "${packages}/LoadFileToRepl/LoadFileToRepl.sublime-settings"}
+                            },
+                            {
+                                "caption": "Settings – User",
+                                "command": "open_file", "args": {"file": "${packages}/User/LoadFileToRepl.sublime-settings"}
+                            },
+                            { "caption": "-" },
+
+                            // Keybindings - Default
+                            {
+                                "caption": "Key Bindings – Default",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/LoadFileToRepl/Default (OSX).sublime-keymap",
+                                    "platform": "OSX"
+                                }
+                            },
+                            {
+                                "caption": "Key Bindings – Default",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/LoadFileToRepl/Default (Linux).sublime-keymap",
+                                    "platform": "Linux"
+                                }
+                            },
+                            {
+                                "caption": "Key Bindings – Default",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/LoadFileToRepl/Default (Windows).sublime-keymap",
+                                    "platform": "Windows"
+                                }
+                            },
+
+                            // Keybindings - User
+                            {
+                                "caption": "Key Bindings – User",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (OSX).sublime-keymap",
+                                    "platform": "OSX"
+                                }
+                            },
+                            {
+                                "caption": "Key Bindings – User",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Linux).sublime-keymap",
+                                    "platform": "Linux"
+                                }
+                            },
+                            {
+                                "caption": "Key Bindings – User",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Windows).sublime-keymap",
+                                    "platform": "Windows"
+                                }
+                            },
+                            { "caption": "-" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
 ]
