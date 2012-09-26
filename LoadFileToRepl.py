@@ -1,18 +1,32 @@
 import sublime, sublime_plugin
 
+def install_sublimerepl():
+	package_control = __import__("Package Control")
+	ok = sublime.ok_cancel_dialog(
+		"LoadFileToRepl requires installed SublimeREPL plugin. \n" +
+		"Do you want to install it automatically?", "Install")
+	if not ok: return
+	else: 
+		package_manager = package_control.PackageManager()
+		thread = package_control.PackageInstallerThread(package_manager, "SublimeREPL")
+		thread.start()
+		package_control.ThreadProgress(thread, 
+			'Installing package SublimeREPL',
+			'Package SublimeREPL successfully installed')
+		return
+
 class LoadFileToReplCommand(sublime_plugin.TextCommand):
+
 	def run(self, edit, clear=False, save_focus=True, split="vertically"):
 
 		# import is done inside of function, because this plugin 
-		# 	may load before SublimeREPL
+		# 	may be loaded before SublimeREPL
 		# this is either for master or release branch or SublimeREPL
-		try: from sublimerepl import manager as sublimerepl
+		try: from sublimerepl import manager as repl_manager
 		except ImportError: 
-			try: import sublimerepl
-			except ImportError: 
-				sublime.error_message(
-					"""LoadFileToRepl: Looks like you have no SublimeREPL plugin. Install it first, please.
-					""")
+			try: import sublimerepl as repl_manager
+			except ImportError: # is SublimeREPL installed at all???
+				install_sublimerepl()
 				return
 
 		filename = self.view.file_name()
@@ -38,7 +52,8 @@ class LoadFileToReplCommand(sublime_plugin.TextCommand):
 			# else no any split
 		next_group = (source_group + 1) % self.view.window().num_groups()
 
-		if sublimerepl.find_repl(filetype) == None:
+		# if there is no opened repl
+		if repl_manager.find_repl(filetype) == None:
 			# focus on another group to open repl there
 			self.view.window().focus_group(next_group)
 			# open repl according to the type of source file
@@ -47,8 +62,15 @@ class LoadFileToReplCommand(sublime_plugin.TextCommand):
 				"file" :  "config/" + filetype.title() + "/Main.sublime-menu"
 			})
 
+		# second check is for the case, when repl_manager was loaded, 
+		# but then SublimeREPL plugin was removed, so link is broken.
+		if repl_manager.find_repl(filetype) == None:
+			sublime.error_message(
+				"It seems, that SublimeREPL plugin is not loaded. " +
+				"Could you restart Sublime Text 2, please?")
+			return
 		# reveal repl view, move and clear it if needed
-		repl_view = sublimerepl.find_repl(filetype)._view
+		repl_view = repl_manager.find_repl(filetype)._view
 		self.view.window().focus_view(repl_view)
 		if source_group == repl_view.window().active_group():
 			repl_view.window().run_command("move_to_group", {"group": next_group})
