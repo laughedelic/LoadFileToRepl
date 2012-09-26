@@ -45,12 +45,12 @@ You can use these options in hotkeys:
 	{ "keys": ["super+shift+r"], "command": "load_file_to_repl", "args": {"clear": true}}
 ```
 
-(On Windows and Linux there is `ctrl` istead of `⌘`)
+(On Windows and Linux there is `ctrl` instead of `⌘`)
 
 ## Installation
 
-I recommend you to use [Sublime Package Control](http://wbond.net/sublime_packages/package_control). It is very easy and convenient. See it's [usage](http://wbond.net/sublime_packages/package_control/usage) page for reference.
+First of all, you _need_ [Sublime Package Control](http://wbond.net/sublime_packages/package_control) — it is extremely useful. If you have it, the rest is really simple:
 
-* `⌘⇧P` ➤ `Package Control: Install package` ➤ `SublimeREPL`;
-* `⌘⇧P` ➤ `Package Control: Add Repository`, paste `https://github.com/laughedelic/LoadFileToRepl/`;
-* `⌘⇧P` ➤ `Package Control: Install package` ➤ `LoadFileToRepl`;
+	⌘⇧P  ➤  Package Control: Install package  ➤  LoadFileToRepl
+
+> **Note**: if you have no SublimeREPL plugin yet, it will be automatically installed at the first time you use LoadFileToRepl command.
