@@ -15,6 +15,7 @@ At the moment it supports load command for REPLs of the following languages:
 
 (Honestly, it was tested only with Haskell and Scala REPLs only on Mac OS X, so tell me please if it works good or bad with others).
 
+
 ## Content
 
 ### Command `SublimeREPL: Load current file`
@@ -30,9 +31,12 @@ You can call it using
 
 * Command Palette: `⌘⇧P  ➤  SublimeREPL: Load current file  ↩`;
 * Menu: `Tools  ➤  SublimeREPL  ➤  Load current file`;
-* Hotkey: see below.
+* Hotkeys: see below.
 
-### Options:
+
+### Settings:
+
+Command `load_file_to_repl` has several options:
 
 * `clear` — if `true`, clears REPL before loading file (`false` by default);
 * `save_focus` — if `true`, saves focus on the source file, else moves cursor to REPL (`true` by default).
@@ -40,23 +44,40 @@ You can call it using
 
    > **Note**: if you want another splitting behavior or more flexibility, take a look at the [Origamy plugin](https://github.com/SublimeText/Origami/).
 
-### Hotkeys:
+You can find these options and their default values at 
 
-There are two hotkey predefined:
+	Sublime Text 2  ➤  Preferences  ➤  Package Settings  ➤  LoadFileToRepl  ➤  Settings - Default/User 
 
-* `⌘R` — runs `load_file_to_repl` command (mnemonic for `R` is **R**EPL or **R**eload) and moves cursor to it;
+or in Command Palette. You should not edit "Default" files — use them just as a reference. Open "User" files and write (copy from "Defaults") what you need.
+
+
+### Key Bindings:
+
+There are two hotkeys predefined:
+
+* `⌘↩` — runs `load_file_to_repl` command with default options:
 
 ```json
-	{ "keys": ["super+r"], 		 "command": "load_file_to_repl", "args": {"save_focus": false}}
+	{ "keys": ["super+enter"], 		 "command": "load_file_to_repl"},
 ```
 
-* `⌘⇧R` — same, but clears REPL before loading file and doesn't move cursor (saves focus on sourse).
+* `⌘⇧↩` — same, but clears REPL before loading file and moves cursor to REPL:
 
 ```json
-	{ "keys": ["super+shift+r"], "command": "load_file_to_repl", "args": {"clear": true}}
+	{ "keys": ["super+shift+enter"], "command": "load_file_to_repl", 
+	  "args": {
+	  	"clear": true,
+	  	"save_focus": false
+	  }
+	}
 ```
 
 (On Windows and Linux there is `ctrl` instead of `⌘`)
+
+You can find these bindings at
+
+	Sublime Text 2  ➤  Preferences  ➤  Package Settings  ➤  LoadFileToRepl  ➤  Key Bindings - Default/User
+
 
 ## Installation
 
