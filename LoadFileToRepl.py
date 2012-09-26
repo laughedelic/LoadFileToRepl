@@ -1,18 +1,48 @@
 import sublime, sublime_plugin
 
+def is_installed(package):
+	"""Checks if `package` is installed
+	"""
+	settings = sublime.load_settings("Package Control.sublime-settings")
+	installed_packages = settings.get("installed_packages", [])
+	return package in installed_packages
+
+def install(package):
+	"""Offers to install `package`, using Package Control api
+	"""
+	ok = sublime.ok_cancel_dialog(
+			"LoadFileToRepl requires installed %s plugin. \n" % package +
+			"Do you want to install it automatically?",
+			"Install")
+	if ok:
+		PC = __import__("Package Control")
+		thread = PC.PackageInstallerThread(PC.PackageManager(), package)
+		thread.start()
+		PC.ThreadProgress(thread, 
+			'Installing package %s' % package,
+			'Package %s successfully installed' % package)
+
+
 class LoadFileToReplCommand(sublime_plugin.TextCommand):
+
 	def run(self, edit, clear=False, save_focus=True, split="vertically"):
+		# check depencies
+		if not is_installed("SublimeREPL"):
+			install("SublimeREPL")
+			return
 
 		# import is done inside of function, because this plugin 
-		# 	may load before SublimeREPL
-		# this is either for master or release branch or SublimeREPL
-		try: from sublimerepl import manager as sublimerepl
-		except ImportError: 
-			try: import sublimerepl
-			except ImportError: 
+		# 	may be loaded before SublimeREPL
+		# this is either for master  branch:
+		try: from sublimerepl import manager as repl_manager
+		except ImportError: # or for release branch of SublimeREPL:
+			try: import sublimerepl as repl_manager
+			except ImportError: # something strange...
 				sublime.error_message(
-					"""LoadFileToRepl: Looks like you have no SublimeREPL plugin. Install it first, please.
-					""")
+					 """Looks like SublimeREPL plugin is installed, 
+					 	but cannot be loaded. Try to restart Sublime Text 2. 
+					 	If it doesn't help, report a bug, please: \n
+						http://github.com/laughedelic/LoadFileToRepl/issues""")
 				return
 
 		filename = self.view.file_name()
@@ -38,7 +68,8 @@ class LoadFileToReplCommand(sublime_plugin.TextCommand):
 			# else no any split
 		next_group = (source_group + 1) % self.view.window().num_groups()
 
-		if sublimerepl.find_repl(filetype) == None:
+		# if there is no opened repl
+		if repl_manager.find_repl(filetype) == None:
 			# focus on another group to open repl there
 			self.view.window().focus_group(next_group)
 			# open repl according to the type of source file
@@ -48,7 +79,7 @@ class LoadFileToReplCommand(sublime_plugin.TextCommand):
 			})
 
 		# reveal repl view, move and clear it if needed
-		repl_view = sublimerepl.find_repl(filetype)._view
+		repl_view = repl_manager.find_repl(filetype)._view
 		self.view.window().focus_view(repl_view)
 		if source_group == repl_view.window().active_group():
 			repl_view.window().run_command("move_to_group", {"group": next_group})

@@ -8,7 +8,6 @@ TODO:
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
  ✔ Merge sublimerepl_master and master branches (the only difference is in usage of find_repl method) @done (25.09.2012 19:14)
- ✔ Check if SublimeREPL plugin is installed and try to install it through Package Control api automatically @done (25.09.2012 19:57)
-    Don't know how to install it automatically. Just check and show user a message to install SublimeREPL.
+ ✔ Check if SublimeREPL plugin is installed and try to install it through Package Control api automatically @done (26.09.2012 18:45)
  ✔ An option to save focus on the current view or move it to the opened repl @done (24.09.2012 02:43)
  ✔ An option, that determines how window will be splitted to open repl in a new view @done (25.09.2012 01:48)
