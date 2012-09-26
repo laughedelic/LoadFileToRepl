@@ -1,6 +1,6 @@
 [
     {
-        "caption": "Load file to REPL",
+        "caption": "SublimeREPL: Load current file",
         "command": "load_file_to_repl"
     }
 ]
