@@ -23,9 +23,9 @@ def install(package):
 			'Package %s successfully installed' % package)
 
 
-class LoadFileToReplCommand(sublime_plugin.TextCommand):
+class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 
-	def run(self, edit, clear=False, save_focus=True, split="vertically"):
+	def run(self, clear=False, save_focus=True, split="vertically"):
 		# check depencies
 		if not is_installed("SublimeREPL"):
 			install("SublimeREPL")
@@ -45,42 +45,42 @@ class LoadFileToReplCommand(sublime_plugin.TextCommand):
 						http://github.com/laughedelic/LoadFileToRepl/issues""")
 				return
 
-		filename = self.view.file_name()
-		filetype = self.view.scope_name(0).split(" ")[0].split(".")[1]
+		source_view = self.window.active_view()
+		source_group = self.window.active_group()
 
-		source_view = self.view
-		source_group = source_view.window().active_group()
+		filename = source_view.file_name()
+		filetype = source_view.scope_name(0).split(' ')[0].split('.')[1]
 
 		# if there is only one group, add one more, according to the split option
-		if self.view.window().num_groups() == 1:
+		if self.window.num_groups() == 1:
 			if split == "vertically":
-				self.view.window().run_command("set_layout", {
+				self.window.run_command("set_layout", {
 					"cols"  : [0.0, 0.5, 1.0],
 					"rows"  : [0.0, 1.0],
 					"cells" : [[0, 0, 1, 1], [1, 0, 2, 1]]
 					})
 			elif split == "horizontally":
-				self.view.window().run_command("set_layout", {
+				self.window.run_command("set_layout", {
 					"cols"  : [0.0, 1.0],
 					"rows"  : [0.0, 0.5, 1.0],
 					"cells" : [[0, 0, 1, 1], [0, 1, 1, 2]]
 					})
 			# else no any split
-		next_group = (source_group + 1) % self.view.window().num_groups()
+		next_group = (source_group + 1) % self.window.num_groups()
 
 		# if there is no opened repl
 		if repl_manager.find_repl(filetype) == None:
 			# focus on another group to open repl there
-			self.view.window().focus_group(next_group)
+			self.window.focus_group(next_group)
 			# open repl according to the type of source file
-			self.view.window().run_command("run_existing_window_command", {
+			self.window.run_command("run_existing_window_command", {
 				"id"   :  "repl_" + filetype,
 				"file" :  "config/" + filetype.title() + "/Main.sublime-menu"
 			})
 
 		# reveal repl view, move and clear it if needed
 		repl_view = repl_manager.find_repl(filetype)._view
-		self.view.window().focus_view(repl_view)
+		self.window.focus_view(repl_view)
 		if source_group == repl_view.window().active_group():
 			repl_view.window().run_command("move_to_group", {"group": next_group})
 		if clear:
@@ -88,7 +88,7 @@ class LoadFileToReplCommand(sublime_plugin.TextCommand):
 
 		# focus back on source file if needed
 		if save_focus:
-			self.view.window().focus_view(source_view)
+			self.window.focus_view(source_view)
 
 		formats = {
 			  'haskell' :  ':load "%s"' 
@@ -100,7 +100,7 @@ class LoadFileToReplCommand(sublime_plugin.TextCommand):
 		text = formats[filetype] % filename
 
 		source_view.run_command("save")
-		self.view.window().run_command("repl_send", {
+		self.window.run_command("repl_send", {
 			"external_id" :  filetype,
 			"text"        :  text,    
 			"file_name"   :  filename 
