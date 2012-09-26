@@ -1,4 +1,10 @@
 [
-	{ "keys": ["super+r"], 		 "command": "load_file_to_repl", "args": {"save_focus": false}},
-	{ "keys": ["super+shift+r"], "command": "load_file_to_repl", "args": {"clear": true}}
+	{ "keys": ["super+enter"], 		 "command": "load_file_to_repl"},
+
+	{ "keys": ["super+shift+enter"], "command": "load_file_to_repl", 
+	  "args": {
+	  	"clear": true,
+	  	"save_focus": false
+	  }
+	}
 ]
