@@ -54,9 +54,9 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 
 		# if options are not set, use defaults from settings
 		settings = sublime.load_settings(SETTINGS_FILE)
-		clear      = clear      or settings.get('clear')     
-		save_focus = save_focus or settings.get('save_focus')
-		split      = split      or settings.get('split')     
+		if clear      == None: clear      = settings.get('clear')     
+		if save_focus == None: save_focus = settings.get('save_focus')
+		if split      == None: split      = settings.get('split')     
 
 		# source is where we are right now
 		source_group = self.window.active_group()
