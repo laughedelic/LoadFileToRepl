@@ -1,5 +1,7 @@
 import sublime, sublime_plugin
 
+SETTINGS_FILE = 'LoadFileToRepl.sublime-settings'
+
 def is_installed(package):
 	'''Checks if `package` is installed
 	'''
@@ -31,7 +33,7 @@ def bug_report(message):
 
 class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 
-	def run(self, clear=False, save_focus=True, split='vertically'):
+	def run(self, clear=None, save_focus=None, split=None):
 		# check depencies
 		if not is_installed('SublimeREPL'):
 			install('SublimeREPL')
@@ -50,6 +52,13 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 					'If it doesn\'t help, report about this issue, please.')
 				return
 
+		# if options are not set, use defaults from settings
+		settings = sublime.load_settings(SETTINGS_FILE)
+		clear      = clear      or settings.get('clear')     
+		save_focus = save_focus or settings.get('save_focus')
+		split      = split      or settings.get('split')     
+
+		# source is where we are right now
 		source_group = self.window.active_group()
 		source_view = self.window.active_view()
 		if source_view == None:
