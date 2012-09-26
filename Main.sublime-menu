@@ -1,0 +1,17 @@
+[
+    {
+        "id": "tools",
+        "children":
+        [{
+            "id": "SublimeREPL",
+            "children":
+            [ 
+                { 
+                  "caption": "Load current file",
+                  "command": "load_file_to_repl"
+                },
+                {"caption": "-"}
+            ]
+        }]
+    }
+]
