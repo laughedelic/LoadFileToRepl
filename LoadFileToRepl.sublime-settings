@@ -12,5 +12,14 @@
 	// it determines how window is splitted to show REPL in a new layout group;
 	// if it doesn't have one of these two values, or if window was already splitted, 
 	// this option doesn't take effect — REPL is placed in a new tab or in the next layout group.
-	"split" : "vertically"
+	"split" : "vertically",
+
+	// Here are all supported language/REPL-specific load commands;
+	// you can edit them (in you User Settings), but if you want to add new, please, write me
+	// either by email: alexey.alekhin@me.com or using issue tracker on github
+	"haskell_load_command" : ":load \"%s\"",
+	  "scala_load_command" : ":load %s",
+	"clojure_load_command" : "(load \"%s\")",
+	   "ruby_load_command" : "load '%s'",
+	 "python_load_command" : "execfile(\"%s\")"
 }
