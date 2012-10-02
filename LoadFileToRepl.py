@@ -100,12 +100,14 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 				'file' : 'config/' + filetype.title() + '/Main.sublime-menu'
 			})
 
-		# reveal repl view, move and clear it if needed
+		# reveal repl view and move to another group
 		repl_view = repl_manager.find_repl(filetype)._view
 		self.window.focus_view(repl_view)
 		if source_group == repl_view.window().active_group():
 			repl_view.window().run_command(
 				'move_to_group', {'group': next_group})
+
+		# clear repl if needed
 		if clear:
 			repl_view.run_command('repl_clear')
 
@@ -113,21 +115,23 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 		if save_focus:
 			self.window.focus_view(source_view)
 
-		formats = {
-			  'haskell' :  ':load "%s"' 
-			, 'scala'   :  ':load %s'   
-			, 'clojure' :  '(load "%s")'
-			, 'ruby'    :  "load '%s'"  
-			, 'python'  :  'execfile("%s")'
-			}
-		text = formats[filetype] % filename
+		# and finally, load file to repl!
+		load_command_format = settings.get(filetype + '_load_command')
+		if not load_command_format:
+			bug_report(
+				'%s language is not supported by this plugin.\n' % 
+				filetype.title() +
+			    'If you know suitable load command for it, please, '
+			    'write me to the issue tracker and I\'ll add it.')
+		else:
+			load_command = load_command_format % filename
 
-		source_view.run_command('save')
-		self.window.run_command('repl_send', {
-			'external_id' :  filetype,
-			'text'        :  text,    
-			'file_name'   :  filename 
-			})
+			source_view.run_command('save')
+			self.window.run_command('repl_send', {
+				'external_id' : filetype,
+				'text'        : load_command,    
+				'file_name'   : filename 
+				})
 
-		# just to show user that everything is ok
-		sublime.status_message(filetype.title() + ' REPL > ' + text)
+			# just to show user that everything is ok
+			sublime.status_message(filetype.title() + ' REPL > ' + load_command)
