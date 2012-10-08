@@ -1,10 +1,10 @@
 [
-	{ "keys": ["super+enter"], 		 "command": "load_file_to_repl"},
+	{ "keys": ["super+enter"],		 "command": "load_file_to_repl"},
 
-	{ "keys": ["super+shift+enter"], "command": "load_file_to_repl", 
+	{ "keys": ["super+shift+enter"], "command": "load_file_to_repl",
 	  "args": {
-	  	"clear": true,
-	  	"save_focus": false
+		"clear": true,
+		"save_focus": false
 	  }
 	}
 ]
