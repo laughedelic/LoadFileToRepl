@@ -124,7 +124,7 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 			    'If you know suitable load command for it, please, '
 			    'write me to the issue tracker and I\'ll add it.')
 		else:
-			if sublime.platform() == 'windows' and filetype == 'haskell':
+			if sublime.platform() == 'windows':
 				load_command = load_command_format % filename.replace('\\','\\\\')
 			else:
 				load_command = load_command_format % filename
