@@ -11,6 +11,7 @@ At the moment it supports load command for REPLs of the following languages:
 - Clojure
 - Ruby
 - Python
+- Lua
 - ... it's easy to extend this list. Welcome to suggest yours!
 
 (Honestly, it was tested only with Haskell and Scala REPLs only on Mac OS X, so tell me please if it works good or bad with others).
