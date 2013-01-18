@@ -12,6 +12,7 @@ At the moment it supports load command for REPLs of the following languages:
 - Ruby
 - Python
 - Lua
+- PowerShell
 - ... it's easy to extend this list. Welcome to suggest yours!
 
 
