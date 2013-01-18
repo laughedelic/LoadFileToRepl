@@ -1,6 +1,9 @@
 [
 	{ "keys": ["alt+enter"],	   "command": "load_file_to_repl",
-	  "context": [{"key": "panel_has_focus", "operand": false}]
+	  "context":
+	  	[ {"key": "panel_has_focus", "operand": false}
+	  	, {"key": "use_load_file_to_repl_keybindings", "operand": true}
+		]
 	},
 
 	{ "keys": ["alt+shift+enter"], "command": "load_file_to_repl",
@@ -8,6 +11,9 @@
 		"clear": true,
 		"save_focus": false
 	  },
-	  "context": [{"key": "panel_has_focus", "operand": false}]
+	  "context":
+	  	[ {"key": "panel_has_focus", "operand": false}
+	  	, {"key": "use_load_file_to_repl_keybindings", "operand": true}
+		]
 	}
 ]

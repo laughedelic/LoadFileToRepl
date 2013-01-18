@@ -2,30 +2,30 @@
 // If you want to overwrite defaults, copy this file to the Packages/User folder and edit it there.
 {
 	// if true, clears REPL before loading file
-	"clear" : false,
+	"clear" : false
 
 	// if `true`, saves focus on the source file, 
 	// else moves cursor to the REPL
-	"save_focus" : true,
+	, "save_focus" : true
 
 	// if it has `"horizontally"` or `"vertically"` value, 
 	// it determines how window is splitted to show REPL in a new layout group;
 	// if it doesn't have one of these two values, or if window was already splitted, 
 	// this option doesn't take effect — REPL is placed in a new tab or in the next layout group.
-	"split" : "vertically",
+	, "split" : "vertically"
 
 	// Here are all supported language/REPL-specific load commands;
 	// you can edit them (in you User Settings), but if you want to add new, please, write me
 	// either by email: alexey.alekhin@me.com or using issue tracker on github
-	"haskell_load_command" : ":load \"%s\"",
-	  "scala_load_command" : ":load %s",
-	"clojure_load_command" : "(load-file \"%s\")",
-	   "ruby_load_command" : "load '%s'",
-	 "python_load_command" : "execfile(\"%s\")",
-	    "lua_load_command" : "dofile(\"%s\")",
+	, "haskell_load_command"    : ":load \"%s\""
+	, "scala_load_command"      : ":load %s"
+	, "clojure_load_command"    : "(load-file \"%s\")"
+	, "ruby_load_command"       : "load '%s'"
+	, "python_load_command"     : "execfile(\"%s\")"
+	, "lua_load_command"        : "dofile(\"%s\")"
 
 	// If this options is set to false, keybindings defined by this plugin won't work.
 	// I tried to ommit overlapping with any default keybindings, but anyway, 
 	// you may want to define your own hotkeys — this is what this option is for.
-	"use_load_file_to_repl_keybindings" : true
+	, "use_load_file_to_repl_keybindings" : true
 }

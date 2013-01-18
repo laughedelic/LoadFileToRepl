@@ -14,7 +14,6 @@ At the moment it supports load command for REPLs of the following languages:
 - Lua
 - ... it's easy to extend this list. Welcome to suggest yours!
 
-(Honestly, it was tested only with Haskell and Scala REPLs only on Mac OS X, so tell me please if it works good or bad with others).
 
 
 ## Content
@@ -79,6 +78,7 @@ You can find these bindings at
 
 	Sublime Text 2  ➤  Preferences  ➤  Package Settings  ➤  LoadFileToRepl  ➤  Key Bindings - Default/User
 
+> **Note**: if you don't like them and want to turn off or make your own just set the `use_load_file_to_repl_keybindings` setting to false and reload Sublime.
 
 ## Installation
 

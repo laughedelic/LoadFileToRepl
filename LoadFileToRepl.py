@@ -1,6 +1,7 @@
 import sublime, sublime_plugin
 
 SETTINGS_FILE = __name__ + '.sublime-settings'
+global_settings = sublime.load_settings(SETTINGS_FILE)
 
 def is_installed(package):
 	'''Checks if `package` is installed
@@ -29,6 +30,17 @@ def bug_report(message):
 	if sublime.ok_cancel_dialog(message, 'Open issue tracker'):
 		sublime.active_window().run_command('open_url',
 			{'url': 'https://github.com/laughedelic/LoadFileToRepl/issues'})
+
+
+class LoadFileToReplListener(sublime_plugin.EventListener):
+	def on_query_context(self, view, key, operator, operand, match_all):
+		'''Checks if default keybindings should work or not
+		'''
+		if key == 'use_load_file_to_repl_keybindings': 
+			return (global_settings.get('use_load_file_to_repl_keybindings') and
+					((operator == sublime.OP_EQUAL 	   and operand) or
+					 (operator == sublime.OP_NOT_EQUAL and not operand)))
+		else: return False
 
 
 class LoadFileToReplCommand(sublime_plugin.WindowCommand):

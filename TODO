@@ -1,10 +1,10 @@
 TODO:
  ☐ Record a demo screencast
  ☐ Add support for all SublimeREPL languages
- ☐ Add an option to not use defined keybindings
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Add an option to not use defined keybindings @done (18.01.2013 10:44)
  ✔ Submit this plugin to Community channel @done (02.10.2012 17:36)
  ✔ Move language-specific load commands to settings @done (02.10.2012 18:28)
  ✔ Add settings with default values for command options @done (27.09.2012 02:21)
