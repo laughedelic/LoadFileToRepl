@@ -1,11 +1,12 @@
 TODO:
  ☐ Record a demo screencast
  ☐ Add support for all SublimeREPL languages
- ✔ Submit this plugin to Community channel @done (02.10.2012 17:36)
- ✔ Move language-specific load commands to settings @done (02.10.2012 18:28)
+ ☐ Add an option to not use defined keybindings
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Submit this plugin to Community channel @done (02.10.2012 17:36)
+ ✔ Move language-specific load commands to settings @done (02.10.2012 18:28)
  ✔ Add settings with default values for command options @done (27.09.2012 02:21)
  ✔ Merge sublimerepl_master and master branches (the only difference is in usage of find_repl method) @done (25.09.2012 19:14)
  ✔ Check if SublimeREPL plugin is installed and try to install it through Package Control api automatically @done (26.09.2012 18:45)

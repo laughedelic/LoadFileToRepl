@@ -22,5 +22,10 @@
 	"clojure_load_command" : "(load-file \"%s\")",
 	   "ruby_load_command" : "load '%s'",
 	 "python_load_command" : "execfile(\"%s\")",
-	    "lua_load_command" : "dofile(\"%s\")"
+	    "lua_load_command" : "dofile(\"%s\")",
+
+	// If this options is set to false, keybindings defined by this plugin won't work.
+	// I tried to ommit overlapping with any default keybindings, but anyway, 
+	// you may want to define your own hotkeys — this is what this option is for.
+	"use_load_file_to_repl_keybindings" : true
 }

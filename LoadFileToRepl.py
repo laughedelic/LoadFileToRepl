@@ -1,6 +1,6 @@
 import sublime, sublime_plugin
 
-SETTINGS_FILE = 'LoadFileToRepl.sublime-settings'
+SETTINGS_FILE = __name__ + '.sublime-settings'
 
 def is_installed(package):
 	'''Checks if `package` is installed
