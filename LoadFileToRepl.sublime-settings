@@ -4,13 +4,13 @@
 	// if true, clears REPL before loading file
 	"clear" : false
 
-	// if `true`, saves focus on the source file, 
+	// if `true`, saves focus on the source file,
 	// else moves cursor to the REPL
 	, "save_focus" : true
 
-	// if it has `"horizontally"` or `"vertically"` value, 
+	// if it has `"horizontally"` or `"vertically"` value,
 	// it determines how window is splitted to show REPL in a new layout group;
-	// if it doesn't have one of these two values, or if window was already splitted, 
+	// if it doesn't have one of these two values, or if window was already splitted,
 	// this option doesn't take effect — REPL is placed in a new tab or in the next layout group.
 	, "split" : "vertically"
 
@@ -24,9 +24,10 @@
 	, "python_load_command"     : "execfile(\"%s\")"
 	, "lua_load_command"        : "dofile(\"%s\")"
 	, "powershell_load_command" : ". %s"
+	, "sml_load_command"        : "use \"%s\";"
 
 	// If this options is set to false, keybindings defined by this plugin won't work.
-	// I tried to ommit overlapping with any default keybindings, but anyway, 
+	// I tried to ommit overlapping with any default keybindings, but anyway,
 	// you may want to define your own hotkeys — this is what this option is for.
 	, "use_load_file_to_repl_keybindings" : true
 }
