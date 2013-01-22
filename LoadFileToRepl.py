@@ -79,10 +79,20 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 
 		filename = source_view.file_name()
 		filetype = source_view.scope_name(0).split(' ')[0].split('.')[1]
+		#for the case if user hasn't saved file yet
 		if filetype == 'plain':
 			sublime.error_message(
 				'LoadFileToRepl: Plain text is not supported. '
 				'Change file type, please.')
+			return
+		# check if such filetype is supported
+		load_command_format = settings.get(filetype + '_load_command')
+		if not load_command_format:
+			bug_report(
+				'%s language is not supported by this plugin.\n' % 
+				filetype.title() +
+			    'If you know suitable load command for it, please, '
+			    'write it to the issue tracker and I\'ll add it.')
 			return
 
 		# if there is only one group, split window
@@ -128,14 +138,7 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 			self.window.focus_view(source_view)
 
 		# and finally, load file to repl!
-		load_command_format = settings.get(filetype + '_load_command')
-		if not load_command_format:
-			bug_report(
-				'%s language is not supported by this plugin.\n' % 
-				filetype.title() +
-			    'If you know suitable load command for it, please, '
-			    'write me to the issue tracker and I\'ll add it.')
-		else:
+		if load_command_format:
 			if sublime.platform() == 'windows':
 				load_command = load_command_format % filename.replace('\\','\\\\')
 			else:
