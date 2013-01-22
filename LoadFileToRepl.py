@@ -78,7 +78,7 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 			return
 
 		filename = source_view.file_name()
-		filetype = source_view.scope_name(0).split(' ')[0].split('.')[1]
+		filetype = source_view.scope_name(0).split(' ')[0].split('.')[-1]
 		#for the case if user hasn't saved file yet
 		if filetype == 'plain':
 			sublime.error_message(
