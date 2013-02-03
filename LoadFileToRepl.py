@@ -114,12 +114,17 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 
 		# if there is no opened repl
 		if repl_manager.find_repl(filetype) == None:
+			config_title = filetype.title()
+			repl_id = filetype
+			if repl_id == 'js':
+				repl_id = 'node'
+				config_title = 'NodeJS'
 			# focus on another group to open repl there
 			self.window.focus_group(next_group)
 			# open repl according to the type of source file
 			self.window.run_command('run_existing_window_command', {
-				'id'   : 'repl_' + filetype,
-				'file' : 'config/' + filetype.title() + '/Main.sublime-menu'
+				'id'   : 'repl_' + repl_id,
+				'file' : 'config/' + config_title + '/Main.sublime-menu'
 			})
 
 		# reveal repl view and move to another group
