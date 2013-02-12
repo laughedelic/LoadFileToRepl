@@ -14,6 +14,7 @@ At the moment it supports load command for REPLs of the following languages:
 - Lua
 - PowerShell
 - SML
+- JavaScript (Node)
 - ... it's easy to extend this list. Welcome to suggest yours!
 
 
