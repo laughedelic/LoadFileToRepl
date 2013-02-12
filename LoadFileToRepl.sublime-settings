@@ -26,6 +26,7 @@
 	, "powershell_load_command" : ". %s"
 	, "sml_load_command"        : "use \"%s\";"
 	, "js_load_command"         : ".load %s"
+	, "r_load_command"          : "source('%s')"
 
 	// If this options is set to false, keybindings defined by this plugin won't work.
 	// I tried to ommit overlapping with any default keybindings, but anyway,
