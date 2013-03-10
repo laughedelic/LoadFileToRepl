@@ -20,7 +20,7 @@
 	, "haskell_load_command"    : ":load \"%s\""
 	, "scala_load_command"      : ":load %s"
 	, "clojure_load_command"    : "(load-file \"%s\")"
-	, "clisp_load_command"    	: "(load-file \"%s\")"
+	, "lisp_load_command"    	: "(load \"%s\")"
 	, "ruby_load_command"       : "load '%s'"
 	, "python_load_command"     : "execfile(\"%s\")"
 	, "lua_load_command"        : "dofile(\"%s\")"
