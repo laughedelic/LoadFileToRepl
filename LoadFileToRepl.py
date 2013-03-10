@@ -152,8 +152,7 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 			source_view.run_command('save')
 			self.window.run_command('repl_send', {
 				'external_id' : filetype,
-				'text'        : load_command,    
-				'file_name'   : filename 
+				'text'        : load_command
 				})
 
 			# just to show user that everything is ok
