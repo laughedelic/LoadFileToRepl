@@ -17,6 +17,7 @@ At the moment it supports load command for REPLs of the following languages:
 - JavaScript (Node)
 - R
 - Common Lisp
+- Groovy
 - ... it's easy to extend this list. Welcome to suggest yours!
 
 
