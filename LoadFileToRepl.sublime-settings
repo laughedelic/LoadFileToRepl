@@ -29,6 +29,7 @@
 	, "js_load_command"         : ".load %s"
 	, "r_load_command"          : "source('%s')"
 	, "groovy_load_command"     : "load %s"
+	, "matlab_load_command"     : "run('%s')"
 
 	// If this options is set to false, keybindings defined by this plugin won't work.
 	// I tried to ommit overlapping with any default keybindings, but anyway,
