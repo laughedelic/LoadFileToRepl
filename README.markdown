@@ -6,18 +6,19 @@ This is a companion plugin to [SublimeREPL](http://github.com/wuub/SublimeREPL) 
 
 At the moment it supports load command for REPLs of the following languages:
 
-- Haskell
-- Scala
 - Clojure
-- Ruby
-- Python
-- Lua
-- PowerShell
-- SML
-- JavaScript (Node)
-- R
 - Common Lisp
 - Groovy
+- Haskell
+- JavaScript (Node)
+- Lua
+- Matlab
+- PowerShell
+- Python
+- R
+- Ruby
+- Scala
+- SML
 - ... it's easy to extend this list. Welcome to suggest yours!
 
 
