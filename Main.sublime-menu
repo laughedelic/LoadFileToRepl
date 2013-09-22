@@ -48,27 +48,7 @@
                             // Keybindings - Default
                             {
                                 "caption": "Key Bindings – Default",
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/LoadFileToRepl/Default (OSX).sublime-keymap",
-                                    "platform": "OSX"
-                                }
-                            },
-                            {
-                                "caption": "Key Bindings – Default",
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/LoadFileToRepl/Default (Linux).sublime-keymap",
-                                    "platform": "Linux"
-                                }
-                            },
-                            {
-                                "caption": "Key Bindings – Default",
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/LoadFileToRepl/Default (Windows).sublime-keymap",
-                                    "platform": "Windows"
-                                }
+                                "command": "open_file", "args": { "file": "${packages}/LoadFileToRepl/Default.sublime-keymap" }
                             },
 
                             // Keybindings - User
