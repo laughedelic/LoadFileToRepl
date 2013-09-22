@@ -1,4 +1,4 @@
-# LoadFileToRepl Sublime Text 2 plugin
+# LoadFileToRepl Sublime Text 2/3 plugin
 
 ## Description
 
@@ -53,7 +53,7 @@ Command `load_file_to_repl` has several options:
 
 You can find these options and their default values at 
 
-	Sublime Text 2  ➤  Preferences  ➤  Package Settings  ➤  LoadFileToRepl  ➤  Settings - Default/User 
+	Sublime Text  ➤  Preferences  ➤  Package Settings  ➤  LoadFileToRepl  ➤  Settings - Default/User 
 
 or in Command Palette. You should not edit "Default" files — use them just as a reference. Open "User" files and write (copy from "Defaults") what you need.
 
@@ -83,7 +83,7 @@ There are two hotkeys predefined:
 
 You can find these bindings at
 
-	Sublime Text 2  ➤  Preferences  ➤  Package Settings  ➤  LoadFileToRepl  ➤  Key Bindings - Default/User
+	Sublime Text  ➤  Preferences  ➤  Package Settings  ➤  LoadFileToRepl  ➤  Key Bindings - Default/User
 
 > **Note**: if you don't like them and want to turn off or make your own just set the `use_load_file_to_repl_keybindings` setting to false and reload Sublime.
 
@@ -91,6 +91,8 @@ You can find these bindings at
 
 Using [Sublime Package Control](http://wbond.net/sublime_packages/package_control):
 
+> **Note**: you should install first [SublimeREPL](http://github.com/wuub/SublimeREPL) plugin.
+
 	⌘⇧P  ➤  Package Control: Install package  ➤  LoadFileToRepl
 
-> **Note**: you should install first [SublimeREPL](http://github.com/wuub/SublimeREPL) plugin.
+Now restart Sublime Text to load the plugin settings. That's it!
