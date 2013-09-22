@@ -1,28 +1,8 @@
 import sublime, sublime_plugin
+import sys
 
-SETTINGS_FILE = __name__ + '.sublime-settings'
+SETTINGS_FILE = 'LoadFileToRepl.sublime-settings'
 global_settings = sublime.load_settings(SETTINGS_FILE)
-
-def is_installed(package):
-	'''Checks if `package` is installed
-	'''
-	settings = sublime.load_settings('Package Control.sublime-settings')
-	installed_packages = settings.get('installed_packages', [])
-	return package in installed_packages
-
-def install(package):
-	'''Offers to install `package`, using Package Control api
-	'''
-	if sublime.ok_cancel_dialog(
-			'LoadFileToRepl requires installed %s plugin. \n' % package +
-			'Do you want to install it automatically?',
-			'Install'):
-		PC = __import__('Package Control')
-		thread = PC.PackageInstallerThread(PC.PackageManager(), package)
-		thread.start()
-		PC.ThreadProgress(thread, 
-			'Installing package %s' % package,
-			'Package %s successfully installed' % package)
 
 def bug_report(message):
 	'''Offers to report about problem to the github issue tracker
@@ -30,6 +10,19 @@ def bug_report(message):
 	if sublime.ok_cancel_dialog(message, 'Open issue tracker'):
 		sublime.active_window().run_command('open_url',
 			{'url': 'https://github.com/laughedelic/LoadFileToRepl/issues'})
+
+
+def peek(view_gen):
+	''' In ST2 just returns the value;
+	    In ST3 tries to take first element of generator
+	'''
+	if sys.version.split('.')[0] == '2':
+		return view_gen
+	else:
+		try:
+			return next(view_gen)
+		except StopIteration:
+			return None
 
 
 class LoadFileToReplListener(sublime_plugin.EventListener):
@@ -46,23 +39,19 @@ class LoadFileToReplListener(sublime_plugin.EventListener):
 class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 
 	def run(self, clear=None, save_focus=None, split=None):
-		# check depencies
-		if not is_installed('SublimeREPL'):
-			install('SublimeREPL')
-			return
-
 		# import is done inside of function, because this plugin 
 		# 	may be loaded before SublimeREPL
-		# this is either for master  branch:
-		try: from sublimerepl import manager as repl_manager
-		except ImportError: # or for release branch of SublimeREPL:
-			try: import sublimerepl as repl_manager
-			except ImportError: # something strange...
-				bug_report(
-					'Looks like SublimeREPL plugin is installed, '
-					'but cannot be loaded. Try to restart Sublime Text 2. '
-					'If it doesn\'t help, report about this issue, please.')
-				return
+		try:
+			if sys.version.split('.')[0] == '2': 
+				from sublimerepl 			 import manager as repl_manager
+			else: 	  
+				from SublimeREPL.sublimerepl import manager as repl_manager
+		except ImportError: # something strange...
+			bug_report(
+				'Looks like SublimeREPL plugin cannot be loaded. '
+				'Try to restart Sublime Text. '
+				'If it doesn\'t help, report about this issue, please.')
+			return
 
 		# if options are not set, use defaults from settings
 		settings = sublime.load_settings(SETTINGS_FILE)
@@ -113,7 +102,8 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 		next_group = (source_group + 1) % self.window.num_groups()
 
 		# if there is no opened repl
-		if repl_manager.find_repl(filetype) == None:
+		peek_repl = peek(repl_manager.find_repl(filetype))
+		if peek_repl == None:
 			config_title = filetype.title()
 			repl_id = filetype
 			if repl_id == 'js':
@@ -128,7 +118,12 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 			})
 
 		# reveal repl view and move to another group
-		repl_view = repl_manager.find_repl(filetype)._view
+		peek_repl = peek(repl_manager.find_repl(filetype))
+		if peek_repl == None:
+			sublime.error_message('LoadFileToRepl: Couldn\'t open the repl.')
+			return
+
+		repl_view = peek_repl._view
 		self.window.focus_view(repl_view)
 		if source_group == repl_view.window().active_group():
 			repl_view.window().run_command(

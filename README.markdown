@@ -89,8 +89,8 @@ You can find these bindings at
 
 ## Installation
 
-First of all, you _need_ [Sublime Package Control](http://wbond.net/sublime_packages/package_control) — it is extremely useful. If you have it, the rest is really simple:
+Using [Sublime Package Control](http://wbond.net/sublime_packages/package_control):
 
 	⌘⇧P  ➤  Package Control: Install package  ➤  LoadFileToRepl
 
-> **Note**: if you have no SublimeREPL plugin yet, it will be automatically installed at the first time you use LoadFileToRepl command.
+> **Note**: you should install first [SublimeREPL](http://github.com/wuub/SublimeREPL) plugin.
