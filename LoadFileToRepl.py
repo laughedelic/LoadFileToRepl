@@ -13,16 +13,16 @@ def bug_report(message):
 
 
 def peek(view_gen):
-	''' In ST2 just returns the value;
-	    In ST3 tries to take first element of generator
+	''' if it's a generator, return next, else return the value itself
 	'''
-	if sys.version.split('.')[0] == '2':
+	# print(type(view_gen))
+	# if view_gen == None: return None
+	try:
+		return next(view_gen)
+	except StopIteration:
+		return None
+	except:
 		return view_gen
-	else:
-		try:
-			return next(view_gen)
-		except StopIteration:
-			return None
 
 
 class LoadFileToReplListener(sublime_plugin.EventListener):
