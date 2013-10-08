@@ -9,17 +9,18 @@ At the moment it supports load command for REPLs of the following languages:
 - Clojure
 - Common Lisp
 - Groovy
-- Haskell
+- Haskell (GHCi)
 - JavaScript (Node)
 - Lua
 - Matlab
 - PowerShell
+- Prolog (SICStus)
 - Python
 - R
 - Ruby
 - Scala
-- SML
-- MIT-Scheme
+- Scheme (MIT)
+- Standard ML
 - ... it's easy to extend this list. Welcome to suggest yours!
 
 
