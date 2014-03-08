@@ -10,6 +10,7 @@ At the moment it supports load command for REPLs of the following languages:
 - Common Lisp
 - Groovy
 - Haskell (GHCi)
+- Idris
 - JavaScript (Node)
 - Lua
 - Matlab
@@ -22,7 +23,6 @@ At the moment it supports load command for REPLs of the following languages:
 - Scheme (MIT)
 - Standard ML
 - ... it's easy to extend this list. Welcome to suggest yours!
-
 
 
 ## Content
