@@ -1,3 +1,5 @@
+// If you want to change keybindings, copy them to your Packages/User/Default(...).sublime-keymap file
+// and turn off the 'use_load_file_to_repl_keybindings' setting
 [
 	{ "keys": ["alt+enter"],	   "command": "load_file_to_repl",
 	  "context":

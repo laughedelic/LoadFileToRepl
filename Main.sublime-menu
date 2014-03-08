@@ -27,56 +27,18 @@
                         "caption": "LoadFileToRepl",
                         "children":
                         [
-                            // README
                             {
                                 "caption": "View README",
                                 "command": "open_file", "args": {"file": "${packages}/LoadFileToRepl/README.markdown"}
                             },
-                            { "caption": "-" },
-
-                            // Settings
                             {
-                                "caption": "Settings – Default",
-                                "command": "open_file", "args": {"file": "${packages}/LoadFileToRepl/LoadFileToRepl.sublime-settings"}
+                                "caption": "Open Settings",
+                                "command": "load_file_to_repl_open_settings"
                             },
                             {
-                                "caption": "Settings – User",
-                                "command": "open_file", "args": {"file": "${packages}/User/LoadFileToRepl.sublime-settings"}
-                            },
-                            { "caption": "-" },
-
-                            // Keybindings - Default
-                            {
-                                "caption": "Key Bindings – Default",
+                                "caption": "Default Key Bindings",
                                 "command": "open_file", "args": { "file": "${packages}/LoadFileToRepl/Default.sublime-keymap" }
-                            },
-
-                            // Keybindings - User
-                            {
-                                "caption": "Key Bindings – User",
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/User/Default (OSX).sublime-keymap",
-                                    "platform": "OSX"
-                                }
-                            },
-                            {
-                                "caption": "Key Bindings – User",
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/User/Default (Linux).sublime-keymap",
-                                    "platform": "Linux"
-                                }
-                            },
-                            {
-                                "caption": "Key Bindings – User",
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/User/Default (Windows).sublime-keymap",
-                                    "platform": "Windows"
-                                }
-                            },
-                            { "caption": "-" }
+                            }
                         ]
                     }
                 ]

@@ -3,14 +3,8 @@
         "caption": "SublimeREPL: Load current file",
         "command": "load_file_to_repl"
     },
-
-    // Preferenses
     {
-        "caption": "Preferences: LoadFileToRepl Settings – Default",
-        "command": "open_file", "args": {"file": "${packages}/LoadFileToRepl/LoadFileToRepl.sublime-settings"}
-    },
-    {
-        "caption": "Preferences: LoadFileToRepl Settings – User",
-        "command": "open_file", "args": {"file": "${packages}/User/LoadFileToRepl.sublime-settings"}
+        "caption": "Preferences: LoadFileToRepl Settings",
+        "command": "load_file_to_repl_open_settings"
     }
 ]
