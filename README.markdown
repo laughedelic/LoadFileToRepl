@@ -53,11 +53,14 @@ Command `load_file_to_repl` has several options:
 
    > **Note**: if you want another splitting behavior or more flexibility, take a look at the [Origamy plugin](https://github.com/SublimeText/Origami/).
 
-You can find these options and their default values at 
+You can find these options and their default values in the menu:
 
-	Sublime Text  ➤  Preferences  ➤  Package Settings  ➤  LoadFileToRepl  ➤  Settings - Default/User 
+	Sublime Text  ➤  Preferences  ➤  Package Settings  ➤  LoadFileToRepl  ➤  Open Settings
 
-or in Command Palette. You should not edit "Default" files — use them just as a reference. Open "User" files and write (copy from "Defaults") what you need.
+or in Command Palette:
+
+	Preferences: LoadFileToRepl Settings
+
 
 
 ### Key Bindings:
@@ -85,9 +88,10 @@ There are two hotkeys predefined:
 
 You can find these bindings at
 
-	Sublime Text  ➤  Preferences  ➤  Package Settings  ➤  LoadFileToRepl  ➤  Key Bindings - Default/User
+	Sublime Text  ➤  Preferences  ➤  Package Settings  ➤  LoadFileToRepl  ➤  Default Key Bindings
 
 > **Note**: if you don't like them and want to turn off or make your own just set the `use_load_file_to_repl_keybindings` setting to false and reload Sublime.
+
 
 ## Installation
 

@@ -36,6 +36,19 @@ class LoadFileToReplListener(sublime_plugin.EventListener):
 		else: return False
 
 
+class LoadFileToReplOpenSettingsCommand(sublime_plugin.ApplicationCommand):
+	def run(self):
+		'''This command opens plugins settings file in the User package,
+		   or creates it with defaults if it doesn't exist or is empty
+		'''
+		import os.path
+		f = sublime.packages_path() + "/User/" + SETTINGS_FILE
+		if (not os.path.isfile(f)) or (not os.path.getsize(f)):
+			defaults = sublime.load_resource("Packages/LoadFileToRepl/"+SETTINGS_FILE).encode('utf8')
+			with open(f, 'wb') as fw: fw.write(defaults)
+		sublime.active_window().open_file(f)
+
+
 class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 
 	def run(self, clear=None, save_focus=None, split=None):
