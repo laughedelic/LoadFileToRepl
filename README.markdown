@@ -4,10 +4,11 @@
 
 This is a companion plugin to [SublimeREPL](http://github.com/wuub/SublimeREPL) providing a command to load current source file into according REPL. It just uses a REPL command, like `:load "foo.hs"` for Haskell, or `(load-file "foo.clj")` for Clojure and etc.
 
-At the moment it supports load command for REPLs of the following languages:
+At the moment it supports load command for REPLs of the following languages (in alphabetic order):
 
 - Clojure
 - Common Lisp
+- Elixir/Erlang (iex)
 - Groovy
 - Haskell (GHCi)
 - Idris
@@ -67,13 +68,13 @@ or in Command Palette:
 
 There are two hotkeys predefined:
 
-* `⌘↩` — runs `load_file_to_repl` command with default options:
+* `alt+enter` — runs `load_file_to_repl` command with default options:
 
 ```json
 	{ "keys": ["super+enter"], 		 "command": "load_file_to_repl"},
 ```
 
-* `⌘⇧↩` — same, but clears REPL before loading file and moves cursor to REPL:
+* `alt+shift+enter` — same, but clears REPL before loading file and moves cursor to REPL:
 
 ```json
 	{ "keys": ["super+shift+enter"], "command": "load_file_to_repl", 
@@ -83,8 +84,6 @@ There are two hotkeys predefined:
 	  }
 	}
 ```
-
-(On Windows and Linux there is `ctrl` instead of `⌘`)
 
 You can find these bindings at
 
