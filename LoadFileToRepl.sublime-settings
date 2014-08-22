@@ -15,8 +15,8 @@
 	, "split" : "vertically"
 
 	// Here are all supported language/REPL-specific load commands;
-	// you can edit them (in you User Settings), but if you want to add new, please, write me
-	// either by email: alexey.alekhin@me.com or using issue tracker on github
+	// you can edit them (in you User Settings), but if you want to add a new one, 
+	// please open an issue/pull-request on github
 	, "haskell_load_command"    : ":load \"%s\""
 	, "scala_load_command"      : ":load %s"
 	, "idris_load_command"      : ":load %s"
@@ -24,7 +24,7 @@
 	, "lisp_load_command"    	: "(load \"%s\")"
 	, "scheme_load_command"    	: "(load \"%s\")"
 	, "ruby_load_command"       : "load '%s'"
-	, "python_load_command"     : "execfile(\"%s\")"
+	, "python_load_command"     : "exec(open(\"%s\").read())"
 	, "lua_load_command"        : "dofile(\"%s\")"
 	, "powershell_load_command" : ". %s"
 	, "sml_load_command"        : "use \"%s\";"
