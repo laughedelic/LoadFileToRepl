@@ -44,7 +44,7 @@ class LoadFileToReplOpenSettingsCommand(sublime_plugin.ApplicationCommand):
 		import os.path
 		f = sublime.packages_path() + "/User/" + SETTINGS_FILE
 		if (not os.path.isfile(f)) or (not os.path.getsize(f)):
-			defaults = sublime.load_resource("Packages/LoadFileToRepl/"+SETTINGS_FILE).encode('utf8')
+			defaults = sublime.load_resource("Packages/Load file to REPL/"+SETTINGS_FILE).encode('utf8')
 			with open(f, 'wb') as fw: fw.write(defaults)
 		sublime.active_window().open_file(f)
 
