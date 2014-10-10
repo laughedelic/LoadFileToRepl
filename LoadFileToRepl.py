@@ -2,7 +2,6 @@ import sublime, sublime_plugin
 import sys
 
 SETTINGS_FILE = 'LoadFileToRepl.sublime-settings'
-global_settings = sublime.load_settings(SETTINGS_FILE)
 
 def bug_report(message):
 	'''Offers to report about problem to the github issue tracker
@@ -30,7 +29,8 @@ class LoadFileToReplListener(sublime_plugin.EventListener):
 		'''Checks if default keybindings should work or not
 		'''
 		if key == 'use_load_file_to_repl_keybindings': 
-			return (global_settings.get('use_load_file_to_repl_keybindings') and
+			settings = sublime.load_settings(SETTINGS_FILE)
+			return (settings.get('use_load_file_to_repl_keybindings') and
 					((operator == sublime.OP_EQUAL 	   and operand) or
 					 (operator == sublime.OP_NOT_EQUAL and not operand)))
 		else: return False
