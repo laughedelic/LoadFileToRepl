@@ -122,6 +122,8 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 			if repl_id == 'js':
 				repl_id = 'node'
 				config_title = 'NodeJS'
+			elif repl_id == 'racket':
+				repl_id = 'plt_racket'
 			# focus on another group to open repl there
 			self.window.focus_group(next_group)
 			# open repl according to the type of source file
