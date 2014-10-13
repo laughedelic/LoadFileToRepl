@@ -34,7 +34,7 @@
 	, "matlab_load_command"     : "run('%s')"
 	, "prolog_load_command" 	: "consult('%s')."
 	, "elixir_load_command"		: "c(\"%s\")"
-	, "racket_load_command" 	: ",en %s"
+	, "racket_load_command" 	: ",en \"%s\""
 
 	// If this options is set to false, keybindings defined by this plugin won't work.
 	// I tried to ommit overlapping with any default keybindings, but anyway,
