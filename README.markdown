@@ -1,29 +1,35 @@
 # LoadFileToRepl Sublime Text 2/3 plugin
 
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/laughedelic/LoadFileToRepl?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 ## Description
 
-This is a companion plugin to [SublimeREPL](http://github.com/wuub/SublimeREPL) providing a command to load current source file into according REPL. It just uses a REPL command, like `:load "foo.hs"` for Haskell, or `(load-file "foo.clj")` for Clojure and etc.
+This is a companion plugin for [SublimeREPL](http://github.com/wuub/SublimeREPL) providing a command to load current source file into according REPL. It just uses a REPL command, like `:load "foo.hs"` for Haskell, or `(load-file "foo.clj")` for Clojure and etc.
 
 At the moment it supports load command for REPLs of the following languages (in alphabetic order):
 
-- Clojure
-- Common Lisp
-- Elixir/Erlang (iex)
-- Groovy
-- Haskell (GHCi)
-- Idris
-- JavaScript (Node)
-- Lua
-- Matlab
-- PowerShell
-- Prolog (SICStus)
-- Python
-- R
-- Ruby
-- Scala
-- Scheme (MIT)
-- Standard ML
-- ... it's easy to extend this list. Welcome to suggest yours!
+|    Language   |    REPL    |                              Contributor                               |
+| ------------- | ---------- | ---------------------------------------------------------------------- |
+| Clojure       | Leiningen  | [@chrisalbright](https://github.com/laughedelic/LoadFileToRepl/pull/6) |
+| Common Lisp   |            |                                                                        |
+| Elixir/Erlang | iex        |                                                                        |
+| Groovy        | groovysh   | [@rcavalcanti](https://github.com/laughedelic/LoadFileToRepl/pull/15)  |
+| Haskell       | GHCi       |                                                                        |
+| Idris         |            |                                                                        |
+| JavaScript    | Node       | [@jkroso](https://github.com/laughedelic/LoadFileToRepl/pull/9)        |
+| Lua           |            |                                                                        |
+| Matlab        |            | [@rowanc1](https://github.com/laughedelic/LoadFileToRepl/pull/17)      |
+| PowerShell    |            |                                                                        |
+| Prolog        | SICStus    | [@pedrokost](https://github.com/laughedelic/LoadFileToRepl/pull/21)    |
+| Python        |            |                                                                        |
+| R             |            |                                                                        |
+| Racket        | XREPL      | [@keyanzhang](https://github.com/laughedelic/LoadFileToRepl/pull/30)   |
+| Ruby          |            |                                                                        |
+| Scala         |            |                                                                        |
+| Scheme        | MIT Scheme | [@cyberzlex](https://github.com/laughedelic/LoadFileToRepl/pull/19)    |
+| Standard ML   | SML        | [@ActiveObject](https://github.com/laughedelic/LoadFileToRepl/pull/8)  |
+
+It's easy to extend this list. Pull-requests are welcome!
 
 
 ## Content
