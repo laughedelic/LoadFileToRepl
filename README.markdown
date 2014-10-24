@@ -11,15 +11,15 @@ At the moment it supports load command for REPLs of the following languages (in 
 |    Language   |    REPL    |                              Contributor                               |
 | ------------- | ---------- | ---------------------------------------------------------------------- |
 | Clojure       | Leiningen  | [@chrisalbright](https://github.com/laughedelic/LoadFileToRepl/pull/6) |
-| Common Lisp   |            |                                                                        |
-| Elixir/Erlang | iex        |                                                                        |
+| Common Lisp   |            | [@cfmeyers](https://github.com/laughedelic/LoadFileToRepl/issues/12)   |
+| Elixir/Erlang | iex        | [@yitzhakbg](https://github.com/laughedelic/LoadFileToRepl/issues/23)  |
 | Groovy        | groovysh   | [@rcavalcanti](https://github.com/laughedelic/LoadFileToRepl/pull/15)  |
 | Haskell       | GHCi       |                                                                        |
 | Idris         |            |                                                                        |
 | JavaScript    | Node       | [@jkroso](https://github.com/laughedelic/LoadFileToRepl/pull/9)        |
-| Lua           |            |                                                                        |
+| Lua           |            | [@mkottman](https://github.com/laughedelic/LoadFileToRepl/issues/5)    |
 | Matlab        |            | [@rowanc1](https://github.com/laughedelic/LoadFileToRepl/pull/17)      |
-| PowerShell    |            |                                                                        |
+| PowerShell    |            | [@mvoidex](https://github.com/laughedelic/LoadFileToRepl/issues/7)     |
 | Prolog        | SICStus    | [@pedrokost](https://github.com/laughedelic/LoadFileToRepl/pull/21)    |
 | Python        |            |                                                                        |
 | R             |            |                                                                        |
