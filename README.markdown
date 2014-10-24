@@ -8,26 +8,26 @@ This is a companion plugin for [SublimeREPL](http://github.com/wuub/SublimeREPL)
 
 At the moment it supports load command for REPLs of the following languages (in alphabetic order):
 
-|    Language   |    REPL    |                              Contributor                               |
-| ------------- | ---------- | ---------------------------------------------------------------------- |
-| Clojure       | Leiningen  | [@chrisalbright](https://github.com/laughedelic/LoadFileToRepl/pull/6) |
-| Common Lisp   |            | [@cfmeyers](https://github.com/laughedelic/LoadFileToRepl/issues/12)   |
-| Elixir/Erlang | iex        | [@yitzhakbg](https://github.com/laughedelic/LoadFileToRepl/issues/23)  |
-| Groovy        | groovysh   | [@rcavalcanti](https://github.com/laughedelic/LoadFileToRepl/pull/15)  |
-| Haskell       | GHCi       |                                                                        |
-| Idris         |            |                                                                        |
-| JavaScript    | Node       | [@jkroso](https://github.com/laughedelic/LoadFileToRepl/pull/9)        |
-| Lua           |            | [@mkottman](https://github.com/laughedelic/LoadFileToRepl/issues/5)    |
-| Matlab        |            | [@rowanc1](https://github.com/laughedelic/LoadFileToRepl/pull/17)      |
-| PowerShell    |            | [@mvoidex](https://github.com/laughedelic/LoadFileToRepl/issues/7)     |
-| Prolog        | SICStus    | [@pedrokost](https://github.com/laughedelic/LoadFileToRepl/pull/21)    |
-| Python        |            |                                                                        |
-| R             |            |                                                                        |
-| Racket        | XREPL      | [@keyanzhang](https://github.com/laughedelic/LoadFileToRepl/pull/30)   |
-| Ruby          |            |                                                                        |
-| Scala         |            |                                                                        |
-| Scheme        | MIT Scheme | [@cyberzlex](https://github.com/laughedelic/LoadFileToRepl/pull/19)    |
-| Standard ML   | SML        | [@ActiveObject](https://github.com/laughedelic/LoadFileToRepl/pull/8)  |
+|    Language   |    REPL    |                    Contributor                     |                             Issue                              |
+| ------------- | ---------- | -------------------------------------------------- | -------------------------------------------------------------- |
+| Clojure       | Leiningen  | [@chrisalbright](https://github.com/chrisalbright) | [#6](https://github.com/laughedelic/LoadFileToRepl/pull/6)     |
+| Common Lisp   |            | [@cfmeyers](https://github.com/cfmeyers)           | [#12](https://github.com/laughedelic/LoadFileToRepl/issues/12) |
+| Elixir/Erlang | iex        | [@yitzhakbg](https://github.com/yitzhakbg)         | [#23](https://github.com/laughedelic/LoadFileToRepl/issues/23) |
+| Groovy        | groovysh   | [@rcavalcanti](https://github.com/rcavalcanti)     | [#15](https://github.com/laughedelic/LoadFileToRepl/pull/15)   |
+| Haskell       | GHCi       |                                                    |                                                                |
+| Idris         |            |                                                    |                                                                |
+| JavaScript    | Node       | [@jkroso](https://github.com/jkroso)               | [#9](https://github.com/laughedelic/LoadFileToRepl/pull/9)     |
+| Lua           |            | [@mkottman](https://github.com/mkottman)           | [#5](https://github.com/laughedelic/LoadFileToRepl/issues/5)   |
+| Matlab        |            | [@rowanc1](https://github.com/rowanc1)             | [#17](https://github.com/laughedelic/LoadFileToRepl/pull/17)   |
+| PowerShell    |            | [@mvoidex](https://github.com/mvoidex)             | [#7](https://github.com/laughedelic/LoadFileToRepl/issues/7)   |
+| Prolog        | SICStus    | [@pedrokost](https://github.com/pedrokost)         | [#21](https://github.com/laughedelic/LoadFileToRepl/pull/21)   |
+| Python        |            |                                                    |                                                                |
+| R             |            |                                                    |                                                                |
+| Racket        | XREPL      | [@keyanzhang](https://github.com/keyanzhang)       | [#30](https://github.com/laughedelic/LoadFileToRepl/pull/30)   |
+| Ruby          |            |                                                    |                                                                |
+| Scala         |            |                                                    |                                                                |
+| Scheme        | MIT Scheme | [@cyberzlex](https://github.com/cyberzlex)         | [#19](https://github.com/laughedelic/LoadFileToRepl/pull/19)   |
+| Standard ML   | SML        | [@ActiveObject](https://github.com/ActiveObject)   | [#8](https://github.com/laughedelic/LoadFileToRepl/pull/8)     |
 
 It's easy to extend this list. Pull-requests are welcome!
 
