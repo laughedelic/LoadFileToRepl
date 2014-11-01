@@ -35,6 +35,7 @@
 	, "prolog_load_command" 	: "consult('%s')."
 	, "elixir_load_command"		: "c(\"%s\")"
 	, "racket_load_command" 	: ",en \"%s\""
+	, "fsharp_load_command" 	: "#load \"%s\""
 
 	// If this options is set to false, keybindings defined by this plugin won't work.
 	// I tried to ommit overlapping with any default keybindings, but anyway,
