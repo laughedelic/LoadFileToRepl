@@ -8,11 +8,12 @@ This is a companion plugin for [SublimeREPL](http://github.com/wuub/SublimeREPL)
 
 At the moment it supports load command for REPLs of the following languages (in alphabetic order):
 
-|    Language   |    REPL    |                    Contributor                     |                             Issue                              |
+|    Language   |    REPL    |                    Contributor                     |                                                                |
 | ------------- | ---------- | -------------------------------------------------- | -------------------------------------------------------------- |
 | Clojure       | Leiningen  | [@chrisalbright](https://github.com/chrisalbright) | [#6](https://github.com/laughedelic/LoadFileToRepl/pull/6)     |
 | Common Lisp   |            | [@cfmeyers](https://github.com/cfmeyers)           | [#12](https://github.com/laughedelic/LoadFileToRepl/issues/12) |
 | Elixir/Erlang | iex        | [@yitzhakbg](https://github.com/yitzhakbg)         | [#23](https://github.com/laughedelic/LoadFileToRepl/issues/23) |
+| F#            | fsi        | [@garystanford](https://github.com/garystanford)   | [#31](https://github.com/laughedelic/LoadFileToRepl/pull/31)   |
 | Groovy        | groovysh   | [@rcavalcanti](https://github.com/rcavalcanti)     | [#15](https://github.com/laughedelic/LoadFileToRepl/pull/15)   |
 | Haskell       | GHCi       |                                                    |                                                                |
 | Idris         |            |                                                    |                                                                |
