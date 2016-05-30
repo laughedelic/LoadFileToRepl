@@ -1,4 +1,4 @@
-// If you want to revert this file to defaults, just delete it and 
+// If you want to revert this file to defaults, just delete it and
 // use "Preferences: LoadFileToRepl Settings" command again
 {
     // if true, clears REPL before loading file
@@ -15,7 +15,7 @@
     , "split" : "vertically"
 
     // Here are all supported language/REPL-specific load commands;
-    // you can edit them (in you User Settings), but if you want to add a new one, 
+    // you can edit them (in you User Settings), but if you want to add a new one,
     // please open an issue/pull-request on github
     , "haskell_load_command"      : ":load \"%s\""
     , "haskell.bird_load_command" : ":load \"%s\""
@@ -37,6 +37,7 @@
     , "elixir_load_command"       : "c(\"%s\")"
     , "racket_load_command"       : ",en \"%s\""
     , "fsharp_load_command"       : "#load \"%s\""
+    , "ocaml_load_command"        : "#use \"%s\";;"
 
     // If this options is set to false, keybindings defined by this plugin won't work.
     // I tried to ommit overlapping with any default keybindings, but anyway,
