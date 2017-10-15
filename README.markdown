@@ -1,5 +1,6 @@
 # LoadFileToRepl Sublime Text 2/3 plugin
 
+[![](https://img.shields.io/packagecontrol/dt/Load%20file%20to%20REPL.svg)](https://packagecontrol.io/packages/Load%20file%20to%20REPL)
 [![](https://img.shields.io/badge/license-LGPLv3-blue.svg)](https://www.tldrlegal.com/l/lgpl-3.0)
 [![](https://img.shields.io/badge/contact-gitter_chat-dd1054.svg)](https://gitter.im/laughedelic/LoadFileToRepl)
 
@@ -9,7 +10,7 @@ This is a companion plugin for [SublimeREPL](http://github.com/wuub/SublimeREPL)
 
 At the moment it supports load command for REPLs of the following languages (in alphabetic order):
 
-| Language      | REPL       | Contributor                                        |                                                                |
+| Language      | REPL       | Contributor                                        | PR                                                             |
 |:--------------|:-----------|:---------------------------------------------------|:---------------------------------------------------------------|
 | Clojure       | Leiningen  | [@chrisalbright](https://github.com/chrisalbright) | [#6](https://github.com/laughedelic/LoadFileToRepl/pull/6)     |
 | Common Lisp   |            | [@cfmeyers](https://github.com/cfmeyers)           | [#12](https://github.com/laughedelic/LoadFileToRepl/issues/12) |
@@ -48,8 +49,8 @@ It's easy to extend this list. Pull-requests are welcome!
 
 You can call it using
 
-* Command Palette: `⌘⇧P  ➤  SublimeREPL: Load current file  ↩`;
-* Menu: `Tools  ➤  SublimeREPL  ➤  Load current file`;
+* Command Palette: <kbd>⌘</kbd><kbd>⇧</kbd><kbd>P</kbd>  ➤  SublimeREPL: Load current file <kbd>↩</kbd>
+* Menu: Tools  ➤  SublimeREPL  ➤  Load current file
 * Hotkeys: see below.
 
 
@@ -65,11 +66,9 @@ Command `load_file_to_repl` has several options:
 
 You can find these options and their default values in the menu:
 
-	Sublime Text  ➤  Preferences  ➤  Package Settings  ➤  LoadFileToRepl  ➤  Open Settings
+* Sublime Text  ➤  Preferences  ➤  Package Settings  ➤  LoadFileToRepl  ➤  Open Settings
 
-or in Command Palette:
-
-	Preferences: LoadFileToRepl Settings
+or in Command Palette: `Preferences: LoadFileToRepl Settings`
 
 
 
@@ -77,36 +76,37 @@ or in Command Palette:
 
 There are two hotkeys predefined:
 
-* `alt+enter` — runs `load_file_to_repl` command with default options:
+* <kbd>alt</kbd><kbd>enter</kbd> — runs `load_file_to_repl` command with default options:
 
 ```json
-	{ "keys": ["super+enter"], 		 "command": "load_file_to_repl"},
+{ "keys": ["super+enter"], "command": "load_file_to_repl" }
 ```
 
-* `alt+shift+enter` — same, but clears REPL before loading file and moves cursor to REPL:
+* <kbd>alt</kbd><kbd>shift</kbd><kbd>enter</kbd> — same, but clears REPL before loading file and moves cursor to REPL:
 
 ```json
-	{ "keys": ["super+shift+enter"], "command": "load_file_to_repl",
-	  "args": {
-	  	"clear": true,
-	  	"save_focus": false
-	  }
-	}
+{ "keys": ["super+shift+enter"],
+  "command": "load_file_to_repl",
+  "args": {
+    "clear": true,
+    "save_focus": false
+  }
+}
 ```
 
 You can find these bindings at
 
-	Sublime Text  ➤  Preferences  ➤  Package Settings  ➤  LoadFileToRepl  ➤  Default Key Bindings
+* Sublime Text  ➤  Preferences  ➤  Package Settings  ➤  LoadFileToRepl  ➤  Default Key Bindings
 
 > **Note**: if you don't like them and want to turn off or make your own just set the `use_load_file_to_repl_keybindings` setting to false and reload Sublime.
 
 
 ## Installation
 
-Using [Sublime Package Control](http://wbond.net/sublime_packages/package_control):
+Using [Sublime Package Control](https://packagecontrol.io/):
 
-> **Note**: you should install first [SublimeREPL](http://github.com/wuub/SublimeREPL) plugin.
+> **Note**: you should install [SublimeREPL](http://github.com/wuub/SublimeREPL) plugin first
 
-	⌘⇧P  ➤  Package Control: Install package  ➤  LoadFileToRepl
+<kbd>⌘</kbd><kbd>⇧</kbd><kbd>P</kbd>  ➤  Package Control: Install package  ➤  LoadFileToRepl
 
 Now restart Sublime Text to load the plugin settings. That's it!
