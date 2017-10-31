@@ -97,8 +97,11 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 			    'write it to the issue tracker and I\'ll add it.')
 			return
 
-		# if there is only one group, split window
-		if self.window.num_groups() == 1:
+		peek_repl = peek(repl_manager.find_repl(filetype))
+
+		# if there is only one group and repl view is not present or is in current window, split window
+		# i.e if repl view is in different window don't split
+		if self.window.num_groups() == 1 and (peek_repl == None or peek_repl._view.window() == self.window):
 			if split == 'vertically':
 				self.window.run_command('set_layout', {
 					'cols'  : [0.0, 0.5, 1.0],
@@ -115,7 +118,6 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 		next_group = (source_group + 1) % self.window.num_groups()
 
 		# if there is no opened repl
-		peek_repl = peek(repl_manager.find_repl(filetype))
 		if peek_repl == None:
 			config_title = filetype.title()
 			repl_id = filetype
@@ -153,7 +155,7 @@ class LoadFileToReplCommand(sublime_plugin.WindowCommand):
 
 		# focus back on source file if needed
 		if save_focus:
-			self.window.focus_view(source_view)
+			source_view.window().focus_view(source_view)
 
 		# and finally, load file to repl!
 		if load_command_format:
